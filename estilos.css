@@ -1,1 +1,71 @@
+:root {
+  --colorFisca: #5595ff;
+}
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: var(--colorFisca);
+  width: 100vw;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contenedor {
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  > img {
+    margin-top: 20px;
+    width: 100px;
+  }
+  #textoPpu {
+    width: 90%;
+    border-radius: 20px;
+    font-size: 1.5rem;
+    border: none;
+    text-align: center;
+  }
+  #buscar, #resetear {
+    margin-top: 20px;
+    font-size: 1rem;
+    padding: 5px;
+    border-radius: 20px;
+    border: none;
+    width: 100px;
+  }
+  #buscar:active, #resetear:active {
+    background-color: blue;
+  }
+
+  .texto{
+    font-size: 1rem;
+    font-weight: bold;
+  }
+}
+.respuesta {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+.fiscaliza{
+    background-color: red;
+    border-radius: 50%;
+    font-weight: bold;
+    width: 120px;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

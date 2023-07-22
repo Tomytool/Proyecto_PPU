@@ -1,21 +1,26 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="estilos.css" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="contenedor">
-        <input type="text" name="textoPpu" id="textoPpu">
-        <button id="buscar">Buscar</button>
-        <div id="patente"></div>
-        <div id="fecha"></div>
-        <div id="modo"></div>
+      <img src="Imagenes/logoFisca.png" alt="" />
+      <input type="text" name="textoPpu" id="textoPpu" />
+      <button id="buscar">Buscar</button>
+      <button id="resetear">Resetear</button>
+      <div class="respuesta" style="opacity: 0;">
+        <div class="texto" id="patente"></div>
+        <div class="texto" id="fecha"></div>
+        <div class="texto" id="modo"></div>
+      </div>
+      <div class="fiscaliza" id="alerta" style="opacity: 0">Fiscalizar</div>
     </div>
-    
+
     <script src="Variables.js"></script>
     <script src="appPPU.js"></script>
-</body>
+  </body>
 </html>
