@@ -43,4 +43,5 @@ botonResetear.addEventListener('click', () => {
   alerta.style.opacity = 0;
   respuesta.style.opacity = 0;
   inputText.value = '';
+  contador= 0
 });
