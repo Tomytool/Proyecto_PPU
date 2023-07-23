@@ -17,7 +17,7 @@ body {
 }
 
 .contenedor {
-  width: 90%;
+  width: 220px;
   display: flex;
   justify-content: center;
   align-items: center;
