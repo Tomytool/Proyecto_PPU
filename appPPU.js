@@ -1,6 +1,7 @@
 let patente = document.getElementById('patente');
 let fecha = document.getElementById('fecha');
 let modo = document.getElementById('modo');
+let subsidio = document.getElementById('subsidio');
 let respuesta = document.querySelector('.respuesta');
 let alerta = document.getElementById('alerta');
 
@@ -11,7 +12,6 @@ let botonResetear = document.getElementById('resetear');
 let contador = 0;
 
 console.log(ppuObj['Hoja1']);
-console.log(alerta);
 
 botonBuscar.addEventListener('click', () => {
   let valor = inputText.value;
@@ -19,29 +19,23 @@ botonBuscar.addEventListener('click', () => {
   ppuObj['Hoja1'].forEach((elemento) => {
     if (elemento.PPU == patenteBuscar) {
       respuesta.style.opacity = 1;
-      patente.innerText = `Patente: 
-      ${elemento.PPU}`;
-      console.log(elemento.PPU);
-      fecha.innerText = `Fecha: 
-      ${elemento.FECHA.substring(0, 10)}`;
-      console.log(elemento.FECHA);
+      patente.innerText = `Patente: ${elemento.PPU}`;
+      fecha.innerText = `Fecha: ${elemento.FECHA.substring(0, 10)}`;
+      subsidio.innerText = `Subsidio: ${elemento.SUBSIDIO}`;
       modo.innerText = `Modo: 
       ${elemento.MODO}`;
-      console.log(elemento.MODO);
     } else {
       contador++;
     }
   });
   if (contador == ppuObj['Hoja1'].length) {
-    console.log('fiscalizar');
     alerta.style.opacity = 1;
   }
 });
 
 botonResetear.addEventListener('click', () => {
-  console.log('resetar');
   alerta.style.opacity = 0;
   respuesta.style.opacity = 0;
   inputText.value = '';
-  contador= 0
+  contador = 0;
 });
