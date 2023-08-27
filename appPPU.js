@@ -1,3 +1,7 @@
+import { ppuObj } from '/Variables.js';
+
+console.log(ppuObj);
+
 let patente = document.getElementById('patente');
 let fecha = document.getElementById('fecha');
 let modo = document.getElementById('modo');
@@ -14,6 +18,7 @@ let contador = 0;
 console.log(ppuObj['Hoja1']);
 
 botonBuscar.addEventListener('click', () => {
+  console.log('buscar');
   let valor = inputText.value;
   let patenteBuscar = valor.toUpperCase();
   ppuObj['Hoja1'].forEach((elemento) => {
@@ -34,6 +39,7 @@ botonBuscar.addEventListener('click', () => {
 });
 
 botonResetear.addEventListener('click', () => {
+  console.log('reset');
   alerta.style.opacity = 0;
   respuesta.style.opacity = 0;
   inputText.value = '';
