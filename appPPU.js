@@ -20,6 +20,7 @@ console.log(ppuObj['Hoja1']);
 botonBuscar.addEventListener('click', () => {
   console.log('buscar');
   let valor = inputText.value;
+  inputText.value=''
   let patenteBuscar = valor.toUpperCase();
   ppuObj['Hoja1'].forEach((elemento) => {
     if (elemento.PPU == patenteBuscar) {
