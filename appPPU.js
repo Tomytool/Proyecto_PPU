@@ -1,48 +1,60 @@
 import { ppuObj } from '/Variables.js';
+const baseDatos = ppuObj.Hoja1;
+console.log(baseDatos);
+let contadorFallos;
 
-console.log(ppuObj);
+const ppuBusqueda = document.getElementById('textoPpu');
+const btnBusqueda = document.getElementById('busqueda');
+const btnResetear = document.getElementById('resetear');
 
-let patente = document.getElementById('patente');
-let fecha = document.getElementById('fecha');
-let modo = document.getElementById('modo');
-let subsidio = document.getElementById('subsidio');
-let respuesta = document.querySelector('.respuesta');
-let alerta = document.getElementById('alerta');
+const patenteBuscada = document.getElementById('patente');
+const fechaBuscada = document.getElementById('fecha');
+const subsidioBuscada = document.getElementById('subsidio');
+const modoBuscada = document.getElementById('modo');
+const alertaBuscada = document.getElementById('alerta');
 
-let inputText = document.getElementById('textoPpu');
-let botonBuscar = document.getElementById('buscar');
-let botonResetear = document.getElementById('resetear');
+const resetearTodo = () => {
+  patenteBuscada.innerText = '';
+  fechaBuscada.innerText = '';
+  subsidioBuscada.innerText = '';
+  modoBuscada.innerText = '';
+  ppuBusqueda.value = '';
+  alertaBuscada.innerText = '';
+  alertaBuscada.style.backgroundColor='#3f82f0'
+};
 
-let contador = 0;
-
-console.log(ppuObj['Hoja1']);
-
-botonBuscar.addEventListener('click', () => {
-  console.log('buscar');
-  let valor = inputText.value;
-  inputText.value=''
-  let patenteBuscar = valor.toUpperCase();
-  ppuObj['Hoja1'].forEach((elemento) => {
-    if (elemento.PPU == patenteBuscar) {
-      respuesta.style.opacity = 1;
-      patente.innerText = `Patente: ${elemento.PPU}`;
-      fecha.innerText = `Fecha: ${elemento.FECHA.substring(0, 10)}`;
-      subsidio.innerText = `Subsidio: ${elemento.SUBSIDIO}`;
-      modo.innerText = `Modo: 
-      ${elemento.MODO}`;
-    } else {
-      contador++;
-    }
-  });
-  if (contador == ppuObj['Hoja1'].length) {
-    alerta.style.opacity = 1;
-  }
+btnResetear.addEventListener('click', () => {
+  resetearTodo();
 });
 
-botonResetear.addEventListener('click', () => {
-  console.log('reset');
-  alerta.style.opacity = 0;
-  respuesta.style.opacity = 0;
-  inputText.value = '';
-  contador = 0;
+btnBusqueda.addEventListener('click', () => {
+  contadorFallos = 0;
+  let dato = ppuBusqueda.value;
+  let DATO = dato.toUpperCase();
+
+  baseDatos.forEach((element) => {
+    if (element.PPU == DATO) {
+      alertaBuscada.style.backgroundColor='#3f82f0'
+      alertaBuscada.innerText = '';
+      patenteBuscada.innerText = element.PPU;
+      fechaBuscada.innerText = `${element.FECHA.substr(
+        8,
+        2
+      )} - ${element.FECHA.substr(5, 2)} - ${element.FECHA.substr(0, 4)}`;
+      modoBuscada.innerText = element.MODO;
+      subsidioBuscada.innerText = element.SUBSIDIO;
+
+      contadorFallos = 0;
+    } else {
+      contadorFallos += 1;
+    }
+  });
+
+  if (contadorFallos == baseDatos.length) {
+    console.log(contadorFallos);
+    console.log('fiscalizar');
+    alertaBuscada.innerText = 'Fiscalizar';
+    ppuBusqueda.value = '';
+    alertaBuscada.style.backgroundColor='red'
+  }
 });

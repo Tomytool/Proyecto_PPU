@@ -10,19 +10,28 @@
   <body>
     <div class="contenedor">
       <img src="Imagenes/logoFisca.png" alt="" />
-      <input type="text" name="textoPpu" id="textoPpu" />
-      <button id="buscar">Buscar</button>
-      <button id="resetear">Resetear</button>
-      <div class="respuesta" style="opacity: 0">
+
+      <form action="" onsubmit="event.preventDefault();">
+        <label for="textoPpu">Ingrese PPU </label>
+        <input type="text" name="textoPpu" id="textoPpu" />
+        <button id="busqueda" class="btn">Buscar</button>
+        <button id="resetear" class="btn">Resetear</button>
+      </form>
+
+      <div class="respuesta">
+        <h2>Patente:</h2>
         <div class="texto" id="patente"></div>
+        <h2>Fecha:</h2>
         <div class="texto" id="fecha"></div>
+        <h2>Subsidio 4A:</h2>
         <div class="texto" id="subsidio"></div>
+        <h2>Modo:</h2>
         <div class="texto" id="modo"></div>
       </div>
-      <div class="fiscaliza" id="alerta" style="opacity: 0">Fiscalizar</div>
+      <h2 class="fiscaliza" id="alerta"></h2>
     </div>
 
-    <!-- <script src="Variables.js"></script> -->
+
     <script type="module" src="appPPU.js"></script>
   </body>
 </html>

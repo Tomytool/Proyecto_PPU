@@ -7,80 +7,83 @@
   padding: 0;
   box-sizing: border-box;
 }
-body {
-  background-color: var(--colorFisca);
-  width: 100vw;
-  height: auto;
+body{
   display: flex;
   justify-content: center;
-  align-items: center;
+width: 100vw;
+background-color:var(--colorFisca);
 }
-
 .contenedor {
-  width: 220px;
+  margin-top: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  padding: 30px;
+  max-width: 320px;
 
-  > img {
-    margin-top: 20px;
-    width: 100px;
-  }
-  #textoPpu {
-    width: 90%;
-    border-radius: 20px;
-    font-size: 1.5rem;
-    border: none;
-    text-align: center;
-  }
-  #buscar,
-  #resetear {
-    margin-top: 10px;
-    background: linear-gradient(to right, #196bca, #6433e0);
-    background-color: #196bca;
-    color: #fff;
-    font-family: Trebuchet MS;
-    font-size: 24px;
-    font-weight: 800;
-    font-style: normal;
-    text-decoration: none;
-    padding: 8px 10px;
-    border: 0px solid #000;
-    border-radius: 20px;
-    display: inline-block;
-    cursor: pointer;
-  }
-  #buscar:active,
-  #resetear:active {
-    transform: scale(0.95);
-  }
+}
 
-  .texto {
-    font-size: 1rem;
-    font-weight: bold;
-    margin-top: 6px;
-    font-size: 1rem;
-  }
+.contenedor img {
+  width: 100px;
+
+}
+.contenedor form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.contenedor form label{
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 10px;
+}
+#textoPpu{
+  width: 130px;
+  height: 30px;
+  font-size: 24px;
+font-weight: bold;
+text-align: center;
+}
+
+.btn {
+  font-family: 'arial black';
+  font-weight: bold;
+  color: #000000;
+  font-size: 16px;
+  border-radius: 12px;
+  width: 140px;
+  margin-top: 10px;
+}
+
+.btn:hover {
+  color: #14396a;
+  background: #468ccf;
+  background: linear-gradient(to top, #468ccf, #63b8ee);
 }
 .respuesta {
   margin-top: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(2, 150px);
+  grid-template-rows: repeat(4, 30px);
+  justify-items: start;
 }
-.fiscaliza {
-  /* transform: translateY(-120px); */
-  background-color: red;
-  color: white;
-  border-radius: 50%;
-  font-size: 1.5rem;
+.respuesta h2{
+  font-size: 1.2rem;
   font-weight: bold;
-  width: 120px;
-  height: 120px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+}
+.respuesta .texto{
+  font-size: 0.8rem;
+}
+
+#alerta{
+  /* background-color: red; */
+  color: white;
+  font-size: 32px;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 12px;
+  margin-top: 10px;
+
 }
