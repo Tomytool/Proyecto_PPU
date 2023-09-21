@@ -7,11 +7,11 @@
   padding: 0;
   box-sizing: border-box;
 }
-body{
+body {
   display: flex;
   justify-content: center;
-width: 100vw;
-background-color:var(--colorFisca);
+  width: 100vw;
+  background-color: var(--colorFisca);
 }
 .contenedor {
   margin-top: 30px;
@@ -21,12 +21,10 @@ background-color:var(--colorFisca);
   flex-direction: column;
   padding: 30px;
   max-width: 320px;
-
 }
 
 .contenedor img {
   width: 100px;
-
 }
 .contenedor form {
   display: flex;
@@ -34,17 +32,17 @@ background-color:var(--colorFisca);
   align-items: center;
   flex-direction: column;
 }
-.contenedor form label{
+.contenedor form label {
   font-size: 1.5rem;
   font-weight: bold;
   padding: 10px;
 }
-#textoPpu{
+#textoPpu {
   width: 130px;
   height: 30px;
   font-size: 24px;
-font-weight: bold;
-text-align: center;
+  font-weight: bold;
+  text-align: center;
 }
 
 .btn {
@@ -69,15 +67,15 @@ text-align: center;
   grid-template-rows: repeat(4, 30px);
   justify-items: start;
 }
-.respuesta h2{
+.respuesta h2 {
   font-size: 1.2rem;
   font-weight: bold;
 }
-.respuesta .texto{
-  font-size: 0.8rem;
+.respuesta .texto {
+  font-size: 1rem;
 }
 
-#alerta{
+#alerta {
   /* background-color: red; */
   color: white;
   font-size: 32px;
@@ -85,5 +83,4 @@ text-align: center;
   padding: 10px 20px;
   border-radius: 12px;
   margin-top: 10px;
-
 }
