@@ -1,4 +1,4 @@
-export const ppuObj = {
+export const ppuObjeto = {
   Hoja1: [
     {
       "FECHA": "2023-01-03T00:00:00.000Z",

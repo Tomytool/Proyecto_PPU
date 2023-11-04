@@ -1,5 +1,5 @@
-import ppuObj from '/ppuObj.js';
-const baseDatos = ppuObj.Hoja1;
+import {ppuObjeto} from '/ppuObj.js';
+const baseDatos = ppuObjeto.Hoja1;
 console.log(baseDatos);
 let contadorFallos;
 
