@@ -1,4 +1,4 @@
-import { ppuObj } from '/Variables.js';
+import ppuObj from '/ppuObj.js';
 const baseDatos = ppuObj.Hoja1;
 console.log(baseDatos);
 let contadorFallos;
@@ -20,7 +20,7 @@ const resetearTodo = () => {
   modoBuscada.innerText = '';
   ppuBusqueda.value = '';
   alertaBuscada.innerText = '';
-  alertaBuscada.style.backgroundColor='#3f82f0'
+  alertaBuscada.style.backgroundColor = '#3f82f0';
 };
 
 btnResetear.addEventListener('click', () => {
@@ -34,7 +34,7 @@ btnBusqueda.addEventListener('click', () => {
 
   baseDatos.forEach((element) => {
     if (element.PPU == DATO) {
-      alertaBuscada.style.backgroundColor='#3f82f0'
+      alertaBuscada.style.backgroundColor = '#3f82f0';
       alertaBuscada.innerText = '';
       patenteBuscada.innerText = element.PPU;
       fechaBuscada.innerText = `${element.FECHA.substr(
@@ -55,6 +55,6 @@ btnBusqueda.addEventListener('click', () => {
     console.log('fiscalizar');
     alertaBuscada.innerText = 'Fiscalizar';
     ppuBusqueda.value = '';
-    alertaBuscada.style.backgroundColor='red'
+    alertaBuscada.style.backgroundColor = 'red';
   }
 });
